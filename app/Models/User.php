@@ -23,7 +23,7 @@ class User extends Authenticatable
     const MODERATOR = 2;
     const ADMIN = 3;
 
-    protected $table = 'user';
+    protected $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
