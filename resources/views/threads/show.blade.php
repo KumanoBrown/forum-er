@@ -19,10 +19,10 @@
                         <div class="space-y-3">
                             <h2 class="text-xl tracking-wide hover:text-blue-400">This is the heading for the forum post</h2>
                             <p class="text-gray-500">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum beatae quod eligendi consequatur omnis sequi veritatis quidem reiciendis asperiores sint illum debitis quam voluptates, nemo rem consectetur dolor error neque fuga nobis est magnam! Pariatur illum enim nobis laboriosam suscipit dolore aperiam aut. Id maiores debitis voluptatem esse expedita ullam!
+                                Text
                             </p>
                             <p class="text-gray-500">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum beatae quod eligendi consequatur omnis sequi veritatis quidem reiciendis asperiores sint illum debitis quam voluptates, nemo rem consectetur dolor error neque fuga nobis est magnam! Pariatur illum enim nobis laboriosam suscipit dolore aperiam aut. Id maiores debitis voluptatem esse expedita ullam!
+                                Text
                             </p>
                         </div>
 
@@ -63,7 +63,7 @@
                     </button>
                     <div class="col-span-7 space-y-4">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil tenetur alias maiores, sequi magni nam incidunt a beatae veritatis animi suscipit omnis ipsam, accusantium vitae impedit vero molestiae nostrum illo perspiciatis rerum? Recusandae dicta cumque nulla officiis explicabo aliquid nobis? Consectetur dicta fugiat quas amet corporis facere possimus asperiores harum?
+                            Text
                         </p>
                         <div class="flex justify-between">
                             {{-- Likes --}}
