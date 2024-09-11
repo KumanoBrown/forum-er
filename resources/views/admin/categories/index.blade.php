@@ -23,7 +23,7 @@
                     @foreach ($categories as $category)
                     <tr>
                         <x-table.data>
-                            <div>{{  $category->id }}</div>
+                            <div>{{ $category->id }}</div>
                         </x-table.data>
                         <x-table.data>
                             <div>{{ $category->name }}</div>
@@ -34,6 +34,20 @@
                         <x-table.data>
                             <div class="text-center">{{ $category->created_at }}</div>
                         </x-table.data>
+                        <x-table.data>
+                            <div class="flex justify-center space-x-4">
+                                <a href="{{ route('admin.categories.edit', $category) }}" class="text-yellow-400">
+                                    <x-zondicon-edit-pencil class="w-5 h-5" />
+                                </a>
+
+                                {{-- Fixed typo: $cateogory -> $category --}}
+                                <x-form action="{{ route('admin.categories.delete', $category) }}" method="DELETE">
+                                    <button type="submit" class="text-red-400">
+                                        <x-zondicon-trash class="w-5 h-5" />
+                                    </button>
+                                </x-form>
+                            </div>
+                        </x-table.data>
                     </tr>
                     @endforeach
                 </tbody>
@@ -41,6 +55,5 @@
             </table>
         </div>
     </section>
-
 
 </x-app-layout>
