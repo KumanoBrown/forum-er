@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,6 +11,7 @@ use Carbon\Carbon;
 class Category extends Model
 {
     use HasFactory;
+    use HasTimestamps;
 
     protected $fillable = ['name', 'slug'];
 
@@ -23,7 +25,4 @@ class Category extends Model
         return $this->hasMany(Thread::class);
     }
 
-    public function createAt(): String{
-        return $this->created_at->format('d-m-Y');
-    }
 }

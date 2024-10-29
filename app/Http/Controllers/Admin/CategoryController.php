@@ -77,24 +77,5 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('admin.categories.index')->with('sucess', 'Category Deleted');
     }
-    public function rules(Category $category)
-{
-    return [
-        'name' => [
-            'required',
-            'string',
-            'min:3',
-            'max:35',
-            Rule::unique('categories')->ignore($category->id),
-        ],
-        'description' => 'nullable|string',
-        'slug' => [
-            'required',
-            'string',
-            'min:3',
-            'max:35',
-            Rule::unique('categories')->ignore($category->id),
-        ],
-    ];
-}
+
 }

@@ -3,7 +3,7 @@
     {{-- Header --}}
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight">
-            {{ __('Categories') }}
+            {{ __('tags') }}
         </h2>
     </x-slot>
 
@@ -20,28 +20,28 @@
                 </thead>
 
                 <tbody class="divide-y divide-gray-200 divide-solid">
-                    @foreach ($categories as $category)
+                    @foreach ($tags as $tag)
                     <tr>
                         <x-table.data>
-                            <div>{{ $category->id }}</div>
+                            <div>{{ $tag->id }}</div>
                         </x-table.data>
                         <x-table.data>
-                            <div>{{ $category->name }}</div>
+                            <div>{{ $tag->name }}</div>
                         </x-table.data>
                         <x-table.data>
-                            <div>{{ $category->slug }}</div>
+                            <div>{{ $tag->slug }}</div>
                         </x-table.data>
                         <x-table.data>
-                            <div class="text-center">{{ $category->created_at }}</div>
+                            <div class="text-center">{{ $tag->created_at }}</div>
                         </x-table.data>
                         <x-table.data>
                             <div class="flex justify-center space-x-4">
-                                <a href="{{ route('admin.categories.edit', $category) }}" class="text-yellow-400">
+                                <a href="{{ route('admin.tags.edit', $tag) }}" class="text-yellow-400">
                                     <x-zondicon-edit-pencil class="w-5 h-5" />
                                 </a>
 
-                                {{-- Fixed typo: $cateogory -> $category --}}
-                                <x-form action="{{ route('admin.categories.delete', $category) }}" method="DELETE">
+                                {{-- Fixed typo: $cateogory -> $tag --}}
+                                <x-form action="{{ route('admin.tags.delete', $tag) }}" method="DELETE">
                                     <button type="submit" class="text-red-400">
                                         <x-zondicon-trash class="w-5 h-5" />
                                     </button>

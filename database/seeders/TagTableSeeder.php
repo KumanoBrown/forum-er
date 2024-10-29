@@ -15,31 +15,31 @@ class TagTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
+        DB::table('tags')->insert([
             'name'       => 'Gameplay',
             'slug'       => 'gameplay',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        DB::table('categories')->insert([
+        DB::table('tags')->insert([
             'name'       => 'Update',
             'slug'       => 'update',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        DB::table('categories')->insert([
+        DB::table('tags')->insert([
             'name'       => 'Esport',
             'slug'       => 'esport',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        DB::table('categories')->insert([
+        DB::table('tags')->insert([
             'name'       => 'Content',
             'slug'       => 'content',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        DB::table('categories')->insert([
+        DB::table('tags')->insert([
             'name'       => 'Other',
             'slug'       => 'other',
             'created_at' => Carbon::now(),
