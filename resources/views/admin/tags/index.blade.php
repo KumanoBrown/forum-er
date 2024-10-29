@@ -1,9 +1,8 @@
 <x-app-layout>
-
     {{-- Header --}}
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight">
-            {{ __('tags') }}
+            {{ __('Tags') }}
         </h2>
     </x-slot>
 
@@ -40,12 +39,14 @@
                                     <x-zondicon-edit-pencil class="w-5 h-5" />
                                 </a>
 
-                                {{-- Fixed typo: $cateogory -> $tag --}}
-                                <x-form action="{{ route('admin.tags.delete', $tag) }}" method="DELETE">
+                                <x-form action="{{ route('admin.tags.delete', $tag) }}" method="DELETE" onsubmit="return confirm('Are you sure you want to delete this tag?');">
+                                    @csrf
+                                    @method('DELETE')
                                     <button type="submit" class="text-red-400">
                                         <x-zondicon-trash class="w-5 h-5" />
                                     </button>
                                 </x-form>
+                                
                             </div>
                         </x-table.data>
                     </tr>

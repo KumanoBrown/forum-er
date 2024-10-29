@@ -1,5 +1,4 @@
 <x-app-layout>
-
     {{-- Header --}}
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight">
@@ -39,13 +38,14 @@
                                 <a href="{{ route('admin.categories.edit', $category) }}" class="text-yellow-400">
                                     <x-zondicon-edit-pencil class="w-5 h-5" />
                                 </a>
-
-                                {{-- Fixed typo: $cateogory -> $category --}}
-                                <x-form action="{{ route('admin.categories.delete', $category) }}" method="DELETE">
+                                <x-form action="{{ route('admin.categories.delete', $category) }}" method="DELETE" onsubmit="return confirm('Are you sure you want to delete this category?');">
+                                    @csrf
+                                    @method('DELETE')
                                     <button type="submit" class="text-red-400">
                                         <x-zondicon-trash class="w-5 h-5" />
                                     </button>
                                 </x-form>
+                                
                             </div>
                         </x-table.data>
                     </tr>
