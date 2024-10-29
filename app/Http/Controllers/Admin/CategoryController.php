@@ -8,6 +8,7 @@ use App\Http\Middleware\IsAdmin;
 use App\Models\Category;
 use Illuminate\Auth\Middleware\Authenticate as MiddlewareAuthenticate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -50,32 +51,50 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        return view('admin.categories.edit', compact('category'));
+            return view('admin.categories.edit', compact('category'));
     }
 
     public function update(Request $request, Category $category)
     {
-        $this->validate($request, [
-            'name' => ['required', 'unique:categories'],
+        
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
         ]);
-
+    
         $category->update([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-
-        return redirect()->route('admin.categories.index')->with('success', 'Category has been Updated');
-
+    
+        return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully');
     }
     
     
     
-
-
 
     public function delete(Category $category)
     {
         $category->delete();
         return redirect()->route('admin.categories.index')->with('sucess', 'Category Deleted');
     }
+    public function rules(Category $category)
+{
+    return [
+        'name' => [
+            'required',
+            'string',
+            'min:3',
+            'max:35',
+            Rule::unique('categories')->ignore($category->id),
+        ],
+        'description' => 'nullable|string',
+        'slug' => [
+            'required',
+            'string',
+            'min:3',
+            'max:35',
+            Rule::unique('categories')->ignore($category->id),
+        ],
+    ];
+}
 }

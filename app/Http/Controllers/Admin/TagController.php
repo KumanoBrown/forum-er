@@ -20,7 +20,10 @@ class TagController extends Controller
      */
     public function index()
     {
-        return view('admin.tags.index');
+        return view('admin.tags.index',[
+            'tags' => Tag::all(),
+        ]);
+      
     }
 
     /**

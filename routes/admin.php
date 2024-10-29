@@ -17,9 +17,10 @@ Route::group(['prefix' => 'admin','as' => 'admin.'], function() {
         Route::get('/create', [CategoryController::class, 'create'])->name('create');
         Route::post('/', [CategoryController::class, 'store'])->name('store');
         Route::get('/edit/{category:slug}', [CategoryController::class, 'edit'])->name('edit');
-        Route::put('/{category:slug', [CategoryController::class, 'update'])->name('update');
-        Route::delete('/{category:slug}', [CategoryController::class, 'destroy'])->name('delete');
+        Route::put('/{category:slug}', [CategoryController::class, 'update'])->name('update'); // Fixed this line
+        Route::delete('/{category:slug}', [CategoryController::class, 'delete'])->name('delete');
     });
+    
         /* Name: Tags
      * Url /admin/tags
      * Route admin.tags
@@ -29,7 +30,8 @@ Route::group(['prefix' => 'admin','as' => 'admin.'], function() {
         Route::get('/create', [TagController::class, 'create'])->name('create');
         Route::post('/', [TagController::class, 'store'])->name('store');
         Route::get('/edit/{tag:slug}', [TagController::class, 'edit'])->name('edit');
-        Route::put('/{tag:slug', [TagController::class, 'update'])->name('update');
-        Route::delete('/{tag:slug}', [TagController::class, 'destroy'])->name('delete');
+        Route::put('/{tag:slug}', [TagController::class, 'update'])->name('update'); // Fixed this line
+        Route::delete('/{tag:slug}', [TagController::class, 'delete'])->name('delete');
     });
+    
 }); 
